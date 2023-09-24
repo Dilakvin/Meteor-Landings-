@@ -28,7 +28,7 @@
     },
     {
       "data": {
-        "url": "https://raw.githubusercontent.com/Dilakvin/Meteor-Landings-/main/data/meteorite-landings.csv"
+        "url": "https://raw.githubusercontent.com/Dilakvin/Meteor-Landings-/main/data/Meteorite_Landings.csv"
       },
       "mark": {"type": "circle", "tooltip": {"content": "data"}},
       
