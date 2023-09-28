@@ -1,0 +1,16 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "height": 500,
+    "width": 500,
+    "title": "Meteorite Types (g)",
+    "data": {
+      "url": "https://raw.githubusercontent.com/Dilakvin/Meteor-Landings-/main/data/Meteorite_Landings.csv"
+    },
+    "mark": {
+        "type": "bar"
+    },
+    "encoding": {
+        "x": {"field": "recclass", "type": "nominal"},
+        "y": {"aggregate": "count", "field": "recclass", "sort": }
+    }
+}

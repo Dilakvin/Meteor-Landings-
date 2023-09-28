@@ -10,8 +10,49 @@
         "type": "boxplot"
     },
     "encoding": {
-        "x": {"field": "year", "type": "ordinal"},
+        "x": {"field": "year", "type": "nominal"},
         "y": {"field": "mass", "type": "quantitative"},
-        "color": {"field": "recclass", "type": "nominal"}
-    }
+        "color": {"field": "year", "type": "nominal"}
+    },
+    "params": [
+        {
+          "name": "recclass",
+          "bind": {
+            "input": "select",
+            "options": [
+              null,
+              "L6",
+              "H5",
+              "H6",
+              "H4",
+              "L5",
+              "LL6",
+              "LL5",
+              "L4",
+              "CV3",
+              "Eucrite-pmict"
+            ],
+            "labels": [
+                "Show All",
+                "L6",
+                "H5",
+                "H6",
+                "H4",
+                "L5",
+                "LL6",
+                "LL5",
+                "L4",
+                "CV3",
+                "Eucrite-pmict"
+            ],
+            "name": "Meteorite Types: "
+          }
+        }
+    ],
+    "transform": [
+        {
+          "filter": "recclass == null || datum.recclass == recclass"
+        }
+    ]
+
 }
