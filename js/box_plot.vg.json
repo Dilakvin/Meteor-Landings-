@@ -1,18 +1,23 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "height": 500,
-    "width": 500,
-    "title": "Weight of Meteorites (g)",
+    "width": 450,
+    "height": 250,
+    "title": "Spread of Meteorites (g) excluding Outliers",
     "data": {
       "url": "https://raw.githubusercontent.com/Dilakvin/Meteor-Landings-/main/data/Meteorite_Landings.csv"
     },
     "mark": {
-        "type": "boxplot"
+        "type": "boxplot",
+        "extent": "min-max"
     },
     "encoding": {
         "x": {"field": "year", "type": "nominal"},
         "y": {"field": "mass", "type": "quantitative"},
-        "color": {"field": "year", "type": "nominal"}
+        "color": {"field": "year", "type": "nominal", "scale": {"zero": false}},
+        "tooltip": [
+            {"field": "name", "type": "nominal", "title": "Name"},
+            {"field": "mass", "type": "quantitative", "title": "Mass (g)"},
+            {"field": "recclass", "type": "nominal", "title": "Type"}]
     },
     "params": [
         {
