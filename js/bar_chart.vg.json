@@ -1,16 +1,70 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "height": 500,
+    "height": 250,
     "width": 500,
-    "title": "Meteorite Types (g)",
+    "title": "Top 10 Meteorite Types (g)",
+    
     "data": {
       "url": "https://raw.githubusercontent.com/Dilakvin/Meteor-Landings-/main/data/Meteorite_Landings.csv"
     },
-    "mark": {
-        "type": "bar"
-    },
-    "encoding": {
-        "x": {"field": "recclass", "type": "nominal"},
-        "y": {"aggregate": "count", "field": "recclass", "sort": }
-    }
+    "layer": [
+        {
+            "mark": {
+                "type": "bar"
+            },
+            "encoding": {
+                "x": {
+                    "field": "recclass",
+                    "title": "Type","type": "nominal",
+                "sort": {
+                    "field": "recclass",
+                    "op": "count",
+                    "order":"descending"
+                }
+            },
+            "color": {
+                "field": "recclass",
+                "type": "nominal",
+                "scale": {"scheme": "category10"},
+                "title": "Type",
+                "legend": null
+            },
+                "y": {
+                    "aggregate": "count",
+                    "field": "recclass"
+                }
+            },
+            "transform": [
+                {"filter": "(datum.recclass == 'L6') || (datum.recclass == 'H5') || (datum.recclass == 'H6') || (datum.recclass == 'L5') || (datum.recclass == 'H4') || (datum.recclass == 'LL6') || (datum.recclass == 'LL5') || (datum.recclass == 'L4') || (datum.recclass == 'CV3') || (datum.recclass == 'Eucrite-pmict')"}
+            ]
+        },
+        {
+            "mark": {
+              "type": "text",
+              "align": "center",
+              "dy": 115,
+              "color": "white"
+            },
+            "encoding": {
+              "x": {
+                "field": "recclass",
+                "title": "Type",
+                "type": "nominal",
+                "sort": {
+                  "field": "recclass",
+                  "op": "count",
+                  "order": "descending"
+                }
+              },
+              "text": {
+                "field": "recclass",
+                "aggregate":"count",
+                "type": "quantitative"
+              }
+            },
+            "transform": [
+                {"filter": "(datum.recclass == 'L6') || (datum.recclass == 'H5') || (datum.recclass == 'H6') || (datum.recclass == 'L5') || (datum.recclass == 'H4') || (datum.recclass == 'LL6') || (datum.recclass == 'LL5') || (datum.recclass == 'L4') || (datum.recclass == 'CV3') || (datum.recclass == 'Eucrite-pmict')"}
+            ]
+        }
+    ]
 }

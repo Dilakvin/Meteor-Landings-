@@ -1,6 +1,6 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "width": 450,
+    "width": 500,
     "height": 250,
     "title": "Spread of Meteorites (g) excluding Outliers",
     "data": {
@@ -58,6 +58,10 @@
         {
           "filter": "recclass == null || datum.recclass == recclass"
         }
-    ]
-
+    ],
+    "config": {
+        "legend": {
+          "orient": "top-left"
+        }
+      }
 }

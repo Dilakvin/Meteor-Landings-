@@ -1,0 +1,50 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "height": 250,
+    "width": 500,
+    "title": "Meteorite Landings of Top Types over the Years",
+    "data": {
+      "url": "https://raw.githubusercontent.com/Dilakvin/Meteor-Landings-/main/data/Meteorite_Landings.csv"
+    },
+    "mark": {
+      "type": "area",
+      "color": "orangered"
+    },
+    "encoding": {
+      "x": {
+        "field": "year",
+        "title": "Year",
+        "type": "nominal"
+      },
+      "y": {
+        "aggregate": "count",
+        "field": "year",
+        "title": "Amount of Landings"
+      },
+      "color": {
+        "field": "recclass",
+        "type": "nominal",
+        "scale": {"scheme": "category10"},
+        "title": "Type" 
+      },
+      "tooltip": [
+        {"field": "year", "title": "Year"},
+        {"field": "recclass", "title": "Type"},
+        {"aggregate":"count", "field": "recclass", "title": "Amount of Landings"}
+      ]
+    },
+    "transform": [
+      {
+        "filter": {
+          "field": "recclass",
+          "oneOf": ["L6", "H5", "H6", "L5", "H4", "LL6", "LL5", "L4", "CV3", "Eucrite-pmict"]
+        }
+      }
+    ],
+    "config": {
+      "legend": {
+        "orient": "top-right"
+      }
+    }
+  }
+  
