@@ -2,7 +2,11 @@
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "width": 500,
     "height": 250,
-    "title": "Spread of Meteorites (g) excluding Outliers",
+    "title": {
+        "text": "Spread of Meteorites (g) excluding Outliers",
+        "subtitle": "Figure 3.",
+        "fontSize": 18
+    },
     "data": {
       "url": "https://raw.githubusercontent.com/Dilakvin/Meteor-Landings-/main/data/Meteorite_Landings.csv"
     },
@@ -11,9 +15,9 @@
         "extent": "min-max"
     },
     "encoding": {
-        "x": {"field": "year", "type": "nominal"},
-        "y": {"field": "mass", "type": "quantitative"},
-        "color": {"field": "year", "type": "nominal", "scale": {"zero": false}},
+        "x": {"field": "year", "type": "nominal", "title": "Year"},
+        "y": {"field": "mass", "type": "quantitative", "title": "Mass (g)"},
+        "color": {"field": "year", "type": "nominal", "scale": {"zero": false, "scheme": "greens"}},
         "tooltip": [
             {"field": "name", "type": "nominal", "title": "Name"},
             {"field": "mass", "type": "quantitative", "title": "Mass (g)"},
@@ -60,6 +64,7 @@
         }
     ],
     "config": {
+        "view": {"stroke":null},
         "legend": {
           "orient": "top-left"
         }

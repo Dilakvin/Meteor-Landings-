@@ -2,7 +2,11 @@
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "height": 250,
     "width": 500,
-    "title": "Meteorite Landings of Top Types over the Years",
+    "title": {
+        "text": "Meteorite Landings of Top Types over the Years",
+        "subtitle": "Figure 4.",
+        "fontSize": 18 
+    },
     "data": {
       "url": "https://raw.githubusercontent.com/Dilakvin/Meteor-Landings-/main/data/Meteorite_Landings.csv"
     },
@@ -24,7 +28,7 @@
       "color": {
         "field": "recclass",
         "type": "nominal",
-        "scale": {"scheme": "category10"},
+        "scale": {"scheme": "category20b"},
         "title": "Type" 
       },
       "tooltip": [
@@ -44,7 +48,8 @@
     "config": {
       "legend": {
         "orient": "top-right"
-      }
+      },
+      "view": {"stroke": null}
     }
   }
   

@@ -1,21 +1,59 @@
 body *{
-	font-family: 'Open Sans', sans-serif;
+	font-family:cursive;
   }
   
   h1 {
 	font-weight: 900;
+	font-size: 40px;
+	padding-bottom: 0px;
+	font-family:cursive;
+	text-align: center;
+  }
+  h2 {
+	font-weight: 900;
+	font-family:cursive;
+	font-size: 20px;
+	padding-bottom: 0px;
+	text-align: center;
+  }
+
+  h3 {
+	font-weight: 900;
+	font-size: 18px;
+	padding-bottom: 0px;
+	font-family:cursive;
+  }
+
+  p2 {
+	font-size: 15px;
+	font-family:cursive;
+  }
+
+  p2 high {
+	font-size: 16px;
+	font-family:cursive;
+	color: darkgreen;
+	font-family:cursive;
+	font-weight: bolder;
   }
   
   body {
-	background-color: black;
+	background-color: white;
+	padding-top: 35px;
+	padding-bottom: 35px;
+	font-family:cursive;
   }
   
   .page {
 	width: 850px;
+	height: 1750px;
 	background-color: white;
 	margin: auto;
 	padding: 50px;
 	padding-top: 35px;
+	padding-bottom: 0px;	
+	border: 1px solid #000;
+	border-radius: 30px;
   }
   
   .vis-container {
@@ -41,4 +79,5 @@ body *{
   
   .small-font {
 	font-size: 14px;
+	font-family:cursive;
   }

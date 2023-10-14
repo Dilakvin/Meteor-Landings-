@@ -2,11 +2,18 @@
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "height": 250,
     "width": 500,
-    "title": "Top 10 Meteorite Types (g)",
-    
+    "title": {
+        "text": "Top 10 Meteorite Types (g)",
+        "subtitle": "Figure 2.",
+        "fontSize": 18
+    },
+    "config": {
+        "view": {"stroke":null}
+      },
     "data": {
       "url": "https://raw.githubusercontent.com/Dilakvin/Meteor-Landings-/main/data/Meteorite_Landings.csv"
     },
+    
     "layer": [
         {
             "mark": {
@@ -25,7 +32,7 @@
             "color": {
                 "field": "recclass",
                 "type": "nominal",
-                "scale": {"scheme": "category10"},
+                "scale": {"scheme": "category20b"},
                 "title": "Type",
                 "legend": null
             },
@@ -43,7 +50,7 @@
               "type": "text",
               "align": "center",
               "dy": 115,
-              "color": "white"
+              "color": "black"
             },
             "encoding": {
               "x": {
@@ -56,6 +63,7 @@
                   "order": "descending"
                 }
               },
+              
               "text": {
                 "field": "recclass",
                 "aggregate":"count",
@@ -66,5 +74,10 @@
                 {"filter": "(datum.recclass == 'L6') || (datum.recclass == 'H5') || (datum.recclass == 'H6') || (datum.recclass == 'L5') || (datum.recclass == 'H4') || (datum.recclass == 'LL6') || (datum.recclass == 'LL5') || (datum.recclass == 'L4') || (datum.recclass == 'CV3') || (datum.recclass == 'Eucrite-pmict')"}
             ]
         }
-    ]
+    ],
+    "encoding": {
+        "y": {
+          "title": "Total Landings"
+        }
+    }
 }
