@@ -36,6 +36,20 @@ body *{
 	font-family:cursive;
 	font-weight: bolder;
   }
+  p3 {
+	font-size: 15px;
+	font-family:cursive;
+	text-align: center;
+  }
+
+  p3 high {
+	font-size: 16px;
+	font-family:cursive;
+	color: darkgreen;
+	font-family:cursive;
+	font-weight: bolder;
+	text-align: center;
+  }
   
   body {
 	background-color: white;
@@ -46,7 +60,7 @@ body *{
   
   .page {
 	width: 850px;
-	height: 1750px;
+	height: 1780px;
 	background-color: white;
 	margin: auto;
 	padding: 50px;
